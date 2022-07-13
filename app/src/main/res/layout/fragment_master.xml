@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MasterFragment">
+
+
+    <data>
+        <variable name="xmlViewModelData" type="com.arastoo.diceroller2022.MasterViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/buttonDiceRolls"
+            android:layout_width="255dp"
+            android:layout_height="67dp"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:onClick="@{xmlViewModelData::clickButtonDiceRolls}"
+            android:text="Dice Rolls"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="201dp"
+            android:layout_height="212dp"
+            app:imageResource="@{xmlViewModelData.imageID}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="141dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="40dp"
+            android:background="#DAEBC6"
+            android:gravity="center"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDiceRolls"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            app:layout_constraintVertical_bias="0.502" />
+
+        <TextView
+            android:id="@+id/textViewLanch"
+            android:layout_width="141dp"
+            android:layout_height="32dp"
+            android:background="#CAE8CB"
+            android:gravity="center"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDiceRolls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toEndOf="@+id/textViewScore"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            app:layout_constraintVertical_bias="0.502" />
+
+        <TextView
+            android:id="@+id/textViewImgId"
+            android:layout_width="294dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="28dp"
+            android:background="#EEC0C0"
+            android:gravity="center"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/textViewLanch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="109dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Cleare"
+            android:onClick="@{xmlViewModelData::clickButtonCleare}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDiceRolls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLanch"
+            app:layout_constraintVertical_bias="0.128" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
