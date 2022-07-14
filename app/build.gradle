@@ -4,10 +4,6 @@ plugins {
 }
 
 
-// اینو باید اضافه کنیم تا بتونیم انوتیشن دیتابایندینگ رو تو بایندینگ ادابتر بخونیم
-apply plugin: 'kotlin-kapt'
-
-
 android {
     compileSdk 32
 

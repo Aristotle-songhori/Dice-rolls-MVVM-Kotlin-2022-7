@@ -41,24 +41,27 @@ class MasterFragment : Fragment() {
         // که از طرف xxxxxx داره نگاه میشه و هر وقت تغییر کرد بیا مقدارش رو به صورت It بگیر و توی اون تابع هرکاری خواستی بکن
        // viewModel.imageID.observe(viewLifecycleOwner, xxxxxx)
         /////////////////////////////////////////////////////////////////////////////////////
-*/
+
+
+        // نیازی به این نیست اگر در ویو مدل از ترانسفر مپ استفاده کنیم
+        //همونجا آبزرو میکنیم و مقدار رو متصل میکنیم به لایوت
         // همه 2 تا تکه کد بالا در یک کلام با هم نگاه کننده ایمیج آیدی
-        viewModel.imageID.observe(viewLifecycleOwner, Observer {
-            binding.textViewImgId.text = "Drawabel Res id => $it"
-            binding.imageButton.setImageResource(it)
-        })
+//        viewModel.imageID.observe(viewLifecycleOwner, Observer {
+//            binding.textViewImgId.text = "Drawabel Res id => $it"
+//            binding.imageButton.setImageResource(it)
+//        })
 
-        //نگاه کننده امتیاز
-        viewModel.yourScore.observe(viewLifecycleOwner, Observer {
-            binding.textViewScore.text = "Score => $it"
-        })
-
-        //نگاه کننده تعداد پرتاب
-        viewModel.yourRolls .observe(viewLifecycleOwner, Observer {
-            binding.textViewLanch.text = "Rolls => $it"
-        })
+//        //نگاه کننده امتیاز
+//        viewModel.yourScore.observe(viewLifecycleOwner, Observer {
+//            binding.textViewScore.text = "Score => $it"
+//        })
+//
+//        //نگاه کننده تعداد پرتاب
+//        viewModel.yourRolls .observe(viewLifecycleOwner, Observer {
+//            binding.textViewLanch.text = "Rolls => $it"
+//        })
         /////////////////////////////////////////////////////////////////////////////////////
-
+ */
         //اینجا م که میایم و میگیم لایه رو لود کن عمو جان
         //return inflater.inflate(R.layout.fragment_master, container, false)
         return  binding.root

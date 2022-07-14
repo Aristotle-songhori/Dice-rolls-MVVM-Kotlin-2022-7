@@ -1,10 +1,12 @@
 package com.arastoo.diceroller2022
 
+import android.text.format.DateUtils
 import android.util.Log
 import android.view.View
 import androidx.core.view.isGone
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import java.util.*
@@ -23,15 +25,35 @@ class MasterViewModel : ViewModel() {
 //  get() {
 //         return _imageID
 //        }
+//
+    // بسیار مهم هست که این ترانسفرمپ میاد مقدار لایو دیتا داخلش رو همیشه نگاه میکنه و به محض تغیرات تغییرمیکنه و داده درونش برمیگردونه
+    //اگر از این استفاده کنیم دیگه نیازی نیست در فرگمنت اصلی آبزرو کنیم و آبزرو رو اینجا انجام دادیم و یک ضرب میتونیم بریم در لایون
+    //این مقدار اینجا رو صدا کنیم
+    // و در کد نویسی خطوط بسیاری حذف و بهینه میشه
+//    val currentImageId = Transformations.map(imageID) { intLocal->
+//        intLocal
+//}
 
 
     private val _yourScore: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val yourScore : LiveData<Int>
         get() =_yourScore
 
+    //این ساخته میشه که لایو دیتا آبزرو بشه و به محض عوض شدن مقدار درونش رو برگردونه
+//    // ما هم توی لایوت همین مقدار میخونیم و همیشه به روز میمونه بدون مشکل
+//    val score = Transformations.map(yourScore) { intLocal->
+//        intLocal
+//    }
+
+
+
     private val _yourRolls: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val yourRolls : LiveData<Int>
         get() =_yourRolls
+
+//    val rolls = Transformations.map(yourRolls) { intLocal->
+//        intLocal
+//    }
 
 
     // تابع اینشیالایز که اولین بار اجرا میشه و ما مقدار ایمیج آیدی خالی رو بهش دادیم عکس خالی خاکستری  رو ببینیم
